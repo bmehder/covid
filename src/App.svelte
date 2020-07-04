@@ -5,8 +5,10 @@
   let promise = getData();
 
   async function getData() {
-    const res = await fetch(`https://mehder.com/covid.json`);
-    let data = await res.json();
+    const res = await fetch(
+      `https://raw.githubusercontent.com/bmehder/projects/master/json/covid.json`
+    );
+    const data = await res.json();
 
     data.forEach((item, i) => {
       if (item.rating <= 33) {
@@ -57,12 +59,6 @@
   input {
     width: 300px;
     padding: 1em;
-    /* border-radius: 10px; */
-    /* background: white; */
-    /* box-shadow: 20px 20px 50px rgba(20, 20, 20, 1),
-      0px -4px 60px rgba(255, 255, 255, 0.3); */
-    /* color: #fff; */
-    /* border: none; */
   }
   input:focus {
     outline: none;
